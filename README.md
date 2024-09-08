@@ -196,45 +196,45 @@ function doPost(e) {
     - modify submit function to call the api and send the formData to sheet.
 
     ```jsx
-        const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwUFZEpCYvcw5wR48u9tEYGt2yvErAXDPDpF99IgYl*************************';
-  
-      // Convert form data to URLSearchParams for x-www-form-urlencoded format
-      const formParams = new URLSearchParams();
-      for (const key in formData) {
-          formParams.append(key, formData[key]);
-      }
-  
-      try {
-          const response = await fetch(scriptURL, {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/x-www-form-urlencoded',
-              },
-              body: formParams.toString(),
-          });
-  
-          console.log("Response: ", response);
-  
-          if (response.ok) {
-              setStatus('Message sent successfully!');
-              setFormData({
-                  name: '',
-                  email: '',
-                  phone: '',
-                  subject: '',
-                  message: ''
-              });
-          } else {
-              setStatus('Failed to send message. Please try again.');
-          }
-      } catch (error) {
-          console.log("Error: ", error);
-          setStatus('Error occurred. Please try again.');
-      }
-  };
+            const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwUFZEpCYvcw5wR48u9tEYGt2yvErAXDPDpF99IgYl*************************';
+    
+        // Convert form data to URLSearchParams for x-www-form-urlencoded format
+        const formParams = new URLSearchParams();
+        for (const key in formData) {
+            formParams.append(key, formData[key]);
+        }
+    
+        try {
+            const response = await fetch(scriptURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formParams.toString(),
+            });
+    
+            console.log("Response: ", response);
+    
+            if (response.ok) {
+                setStatus('Message sent successfully!');
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    subject: '',
+                    message: ''
+                });
+            } else {
+                setStatus('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            console.log("Error: ", error);
+            setStatus('Error occurred. Please try again.');
+        }
+    };
     ```
 
 
