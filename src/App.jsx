@@ -26,7 +26,7 @@ const handleInputChange = (e) => {
     const handleSubmit = async (e) => {
       e.preventDefault();
   
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwUFZEpCYvcw5wR48u9tEYGt2yvErAXDPDpF99IgYl*************************';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwOzar5hIae2x7bXU0EnTSGU9pzLA9Qu0IDfsUN4nb8AOHFcrmuTLoHRlHNp459oRet/exec';
   
       // Convert form data to URLSearchParams for x-www-form-urlencoded format
       const formParams = new URLSearchParams();
